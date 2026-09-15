@@ -62,7 +62,7 @@ Integrity verified with Blake3
 
 ### Download Pre-built Binaries
 
-Go to [GitHub Releases](https://github.com/shadow-601/closeshare/releases) and download:
+Go to [GitHub Releases](https://github.com/Ali-Get/closeshare/releases) and download:
 
 - **Windows:** `.msi` or `.exe` installer
 - **Linux:** `.deb` or `.AppImage`
@@ -75,7 +75,7 @@ Go to [GitHub Releases](https://github.com/shadow-601/closeshare/releases) and d
 # Install Node.js 18+: https://nodejs.org
 # Linux: sudo apt install libwebkit2gtk-4.0-dev build-essential libssl-dev
 
-git clone https://github.com/shadow-601/closeshare.git
+git clone https://github.com/Ali-Get/closeshare.git
 cd closeshare
 npm install
 npm run tauri dev      # Development
