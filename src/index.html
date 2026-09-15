@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloseShare</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>CloseShare</h1>
+            <span class="subtitle">مشاركة ملفات سريعة على الشبكة المحلية</span>
+        </header>
+
+        <nav>
+            <button class="tab active" data-tab="peers">الأجهزة</button>
+            <button class="tab" data-tab="files">ملفاتي</button>
+            <button class="tab" data-tab="transfers">النقل</button>
+            <button class="tab" data-tab="settings">الإعدادات</button>
+        </nav>
+
+        <main>
+            <section id="peers-section" class="tab-content active">
+                <div class="toolbar">
+                    <button id="refresh-peers">تحديث</button>
+                    <span id="peers-count">0 أجهزة متصلة</span>
+                </div>
+                <div id="peers-list" class="grid"></div>
+            </section>
+
+            <section id="files-section" class="tab-content">
+                <div class="toolbar">
+                    <button id="refresh-files">تحديث</button>
+                    <span id="shared-path"></span>
+                </div>
+                <div id="files-list" class="list"></div>
+            </section>
+
+            <section id="transfers-section" class="tab-content">
+                <div id="transfers-list" class="list"></div>
+            </section>
+
+            <section id="settings-section" class="tab-content">
+                <form id="settings-form">
+                    <label>
+                        اسم الجهاز:
+                        <input type="text" id="display-name" placeholder="جهازي">
+                    </label>
+                    <label>
+                        كود المجموعة:
+                        <input type="text" id="group-code" placeholder="1234">
+                    </label>
+                    <label>
+                        مجلد المشاركة:
+                        <input type="text" id="shared-folder" readonly>
+                        <button type="button" id="browse-folder">تصفح</button>
+                    </label>
+                    <label>
+                        منفذ الاكتشاف:
+                        <input type="number" id="discovery-port" value="19999">
+                    </label>
+                    <label>
+                        الاتصالات المتوازية:
+                        <input type="number" id="max-connections" value="8" min="1" max="16">
+                    </label>
+                    <button type="submit">حفظ الإعدادات</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <span id="status">جاهز</span>
+        </footer>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/discovery.js"></script>
+    <script type="module" src="js/browser.js"></script>
+    <script type="module" src="js/transfer.js"></script>
+    <script type="module" src="js/settings.js"></script>
+</body>
+</html>

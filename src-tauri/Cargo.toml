@@ -1,0 +1,43 @@
+[package]
+name = "closeshare"
+version = "1.0.0"
+edition = "2021"
+description = "CloseShare - Fast local network file sharing"
+
+[lib]
+name = "closeshare_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+tauri = { version = "1.6", features = [ "protocol-asset", "dialog-all", "window-start-dragging", "window-unminimize", "window-close", "window-unmaximize", "window-show", "window-minimize", "window-maximize", "window-hide", "fs-all", "shell-open"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bincode = "1.3"
+tokio = { version = "1.36", features = ["full"] }
+uuid = { version = "1.7", features = ["v4", "serde"] }
+blake3 = "1.5"
+zstd = { version = "0.13", features = ["zstdmt"] }
+aes-gcm = "0.10"
+rand = "0.8"
+thiserror = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+parking_lot = "0.12"
+dashmap = "5.5"
+bytes = "1.5"
+socket2 = { version = "0.5", features = ["all"] }
+once_cell = "1.19"
+chrono = { version = "0.4", features = ["serde"] }
+base64 = "0.21"
+walkdir = "2"
+mime_guess = "2"
+whoami = "1"
+dirs-next = "2"
+zip = "0.6"
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
